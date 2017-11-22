@@ -16,7 +16,7 @@ using RaysHotDogs.Utility;
 
 namespace RaysHotDogs
 {
-    [Activity(Label = "TakePictureActivity")]
+    [Activity(Label = "Take a picture with Ray", Icon = "@drawable/smallicon")]
     public class TakePictureActivity : Activity
     {
         private ImageView rayPictureImageView;
@@ -53,10 +53,10 @@ namespace RaysHotDogs
 
         private void TakePictureButton_Click(object sender, EventArgs e)
         {
-            var intent = new Intent(MediaStore.ActionImageCapture);
-            imageFile = new File(imageDirectory, string.Format("PhotoWithRay_{0}.jpg", Guid.NewGuid()));
+            Intent intent = new Intent(MediaStore.ActionImageCapture);
+            imageFile = new File(imageDirectory, String.Format("PhotoWithRay_{0}.jpg", Guid.NewGuid()));
             intent.PutExtra(MediaStore.ExtraOutput, Android.Net.Uri.FromFile(imageFile));
-            StartActivityForResult(intent,0);
+            StartActivityForResult(intent, 0);
         }
 
         protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)

@@ -16,7 +16,7 @@ using RaysHotDogs.Fragments;
 
 namespace RaysHotDogs
 {
-    [Activity(Label = "HotDogMenuActivity")]
+    [Activity(Label = "HotDogMenuActivity", Icon = "@drawable/smallicon")]
     public class HotDogMenuActivity : Activity
     {
         private ListView hotDogListView;

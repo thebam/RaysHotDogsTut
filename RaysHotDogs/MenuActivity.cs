@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace RaysHotDogs
 {
-    [Activity(Label = "MenuActivity", MainLauncher =true)]
+    [Activity(Label = "Ray's Hot Dogs", MainLauncher =true, Icon = "@drawable/smallicon")]
     public class MenuActivity : Activity
     {
         private Button orderButton;
@@ -41,6 +41,14 @@ namespace RaysHotDogs
             orderButton.Click += OrderButton_Click;
             aboutButton.Click += AboutButton_Click;
             takePictureButton.Click += TakePictureButton_Click;
+            mapButton.Click += MapButton_Click;
+        }
+
+        private void MapButton_Click(object sender, EventArgs e)
+        {
+            var intent = new Intent(this,typeof(RayMapActivity));
+            StartActivity(intent);
+
         }
 
         private void TakePictureButton_Click(object sender, EventArgs e)
